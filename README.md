@@ -1,6 +1,6 @@
-# router-app
+# Shapeland
 
-> A Vue.js project
+> Welcome to Shapeland. Implement an interactive playground for shapes to live in.
 
 ## Build Setup
 
