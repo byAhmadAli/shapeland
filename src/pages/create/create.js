@@ -67,7 +67,7 @@ export default {
 			stage.update();
 
 
-			message.push(value);
+			message.push(shapes[a]);
 			this.list = message.map( (name,index) => {return {name, order: index+1, fixed: false}; })
 		}
 	},
