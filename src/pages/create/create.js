@@ -7,8 +7,9 @@ const dir = {
 	x: 0,
 	y: 0
 }
-const colors =['red','blue','green']
-var a = 0;
+const colors =['red', 'blue', 'green'];
+const shapes = ['Rect', 'Circle', 'PolyStar']
+var a = 2;
 var stage;
 export default {
 	name: 'create',
@@ -51,7 +52,16 @@ export default {
 				return
 			}
 			var shape = new cjs.Shape();
-			shape.graphics.beginFill(colors[a]).drawRect(0, dir.x*60, 50, 50);
+
+			if(shapes[a] == 'Rect'){
+				shape.graphics.beginFill(colors[a]).drawRect(100, 0, 50, 50);
+			}else if(shapes[a] == 'Circle'){
+				shape.graphics.beginFill(colors[a]).drawCircle(100, 120, 30);
+			}else if(shapes[a] == 'PolyStar'){
+				shape.graphics.beginFill(colors[a]).drawPolyStar(100, 240, 50, 5, 0.6, -90);
+			}
+
+			
 			
 			stage.addChild(shape);
 			stage.update();
