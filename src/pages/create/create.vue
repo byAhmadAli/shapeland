@@ -1,6 +1,9 @@
 <template>
 	<div page-name="create">
 		<div class="container">
+			<div class="col-md-6">
+				<canvas id="demoCanvas" width="600px" height="400px"></canvas>
+			</div>
 			<div  class="col-md-3">
 				<draggable class="list-group" element="ul" v-model="list" :options="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=false"> 
 					<transition-group type="transition" :name="'flip-list'">
@@ -29,17 +32,15 @@
 			<div  class="list-group col-md-3">
 				<pre>{{listString}}</pre>
 			</div>
-			<div  class="list-group col-md-3">
-				<pre>{{list2String}}</pre>
-			</div>
 		</div>
 		<div class="container actions">
-			<a :href="'/#/create/add'" class="add" v-on:click="add('all')" tooltip="Add SVG">
+			<a class="add" v-on:click="add('all')" tooltip="Add SVG">
 				<i class="fa fa-plus"></i>
 			</a>
 		</div>
 	</div>
 </template>
+
 <script src="./create.js"></script>
 <style lang="scss" scoped>
 	[page-name = 'create']{
