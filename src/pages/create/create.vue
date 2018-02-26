@@ -1,6 +1,9 @@
 <template>
 	<div page-name="create">
 		<div class="container">
+			<div class="col-md-12">
+				<Add @clicked="add"></Add>
+			</div>
 			<div class="col-md-6">
 				<canvas id="demoCanvas" width="600px" height="400px"></canvas>
 			</div>
@@ -34,7 +37,7 @@
 			</div>
 		</div>
 		<div class="container actions">
-			<a class="add" v-on:click="add('all')" tooltip="Add SVG">
+			<a data-toggle="modal" data-target="#myModal" class="add" tooltip="Add SVG">
 				<i class="fa fa-plus"></i>
 			</a>
 		</div>

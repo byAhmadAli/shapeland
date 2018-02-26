@@ -1,5 +1,5 @@
-
 import draggable from 'vuedraggable';
+import Add from '@/components/add/add.vue'
 
 const cjs = createjs;
 const message = []
@@ -7,14 +7,14 @@ const dir = {
 	x: 0,
 	y: 0
 }
-const colors =['red', 'blue', 'green'];
-const shapes = ['Rect', 'Circle', 'PolyStar']
+
 var a = 2;
 var stage;
 export default {
 	name: 'create',
 	components: {
 		draggable,
+		Add
 	},
 	data () {
 		return {
@@ -26,7 +26,8 @@ export default {
 		}
 	},
 	mounted() {
-	    stage = new createjs.Stage('demoCanvas');
+	    stage = new cjs.Stage('demoCanvas');
+
 	},
 
 	methods:{
@@ -39,6 +40,7 @@ export default {
 			return (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
 		},
 		add(value){
+
 			if(a==2){
 				a=0
 			}else{
@@ -61,13 +63,10 @@ export default {
 				shape.graphics.beginFill(colors[a]).drawPolyStar(100, 240, 50, 5, 0.6, -90);
 			}
 
-			
-			
 			stage.addChild(shape);
 			stage.update();
 
-
-			message.push(shapes[a]);
+			message.push(value);
 			this.list = message.map( (name,index) => {return {name, order: index+1, fixed: false}; })
 		}
 	},

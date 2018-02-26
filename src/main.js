@@ -6,6 +6,8 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/scss/font-awesome.scss';
 
+import 'bootstrap/dist/js/bootstrap.min.js';
+
 
 Vue.config.productionTip = false
 
