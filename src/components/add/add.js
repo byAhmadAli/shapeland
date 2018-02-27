@@ -6,9 +6,13 @@ export default {
 	},
 	methods: {
 		onClickButton () {
-			debugger;
-			let val = $('input[name="type"]').val()
-			this.$emit('clicked', val)
+			
+			let val ={
+				name: $('input[name="type"]').val(),
+				shape: $('#shapes').val(),
+				color: $('#colors').val() ? $('#colors').val() : 'black'
+			} 
+			this.$emit('clicked', val);
 		},
 		onChangeShape(){
 			let exStage = new cjs.Stage('example');

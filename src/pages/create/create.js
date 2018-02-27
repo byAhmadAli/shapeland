@@ -55,19 +55,20 @@ export default {
 			}
 			var shape = new cjs.Shape();
 
-			if(shapes[a] == 'Rect'){
-				shape.graphics.beginFill(colors[a]).drawRect(100, 0, 50, 50);
-			}else if(shapes[a] == 'Circle'){
-				shape.graphics.beginFill(colors[a]).drawCircle(100, 120, 30);
-			}else if(shapes[a] == 'PolyStar'){
-				shape.graphics.beginFill(colors[a]).drawPolyStar(100, 240, 50, 5, 0.6, -90);
+			if(value.shape == 'Rect'){
+				shape.graphics.beginFill(value.color).drawRect(100, 0, 50, 50);
+			}else if(value.shape == 'Circle'){
+				shape.graphics.beginFill(value.color).drawCircle(100, 120, 30);
+			}else if(value.shape == 'PolyStar'){
+				shape.graphics.beginFill(value.color).drawPolyStar(100, 240, 50, 5, 0.6, -90);
 			}
 
 			stage.addChild(shape);
 			stage.update();
 
 			message.push(value);
-			this.list = message.map( (name,index) => {return {name, order: index+1, fixed: false}; })
+			
+			this.list = message.map( (item,index) => {return {name:item.name, color:item.color, shape:item.shape, order: index+1, fixed: false}; })
 		}
 	},
 	computed: {
